@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('transaksis', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users', 'id')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('broker_id')->constrained('brokers', 'id')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('perusahaan_id')->constrained('perusahaans', 'id')->onUpdate('cascade')->onDelete('cascade');
             $table->decimal('harga', 19, 2)->default(0);

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AkunPageController;
 use App\Http\Controllers\BerandaPageController;
 use App\Http\Controllers\BrokerPageController;
 use App\Http\Controllers\LoginPageController;
@@ -21,7 +22,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['noauth'])->group(function () {
     Route::get('/', [LoginPageController::class, 'index'])->name('/');
-    Route::post('/login', [LoginPageController::class, 'login']);
+    Route::post('login', [LoginPageController::class, 'login']);
+    Route::get('daftar', [LoginPageController::class, 'daftar']);
+    Route::post('daftar', [LoginPageController::class, 'daftarakun']);
 });
 
 
@@ -29,7 +32,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('beranda', [BerandaPageController::class, 'index']);
     Route::get('broker', [BrokerPageController::class, 'index']);
     Route::get('perusahaan', [PerusahaanPageController::class, 'index']);
-    Route::get('akun', [BerandaPageController::class, 'index']);
+    Route::get('akun', [AkunPageController::class, 'index']);
 
     Route::get('logout', [LoginPageController::class, 'logout']);
 });

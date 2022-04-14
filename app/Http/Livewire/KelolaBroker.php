@@ -32,6 +32,7 @@ class KelolaBroker extends Component
         ]);
 
         $tambah = Broker::create([
+            'user_id' => auth()->user()->id,
             'nama' => $this->nama
         ]);
 
@@ -87,7 +88,7 @@ class KelolaBroker extends Component
 
     public function render()
     {
-        $datas = Broker::latest();
+        $datas = Broker::latest()->where('user_id', auth()->user()->id);
         return view('livewire.kelola-broker', [
             'datas' => $datas->paginate($this->paginate)
         ]);

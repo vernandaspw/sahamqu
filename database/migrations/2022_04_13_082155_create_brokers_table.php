@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('brokers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users', 'id')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama', 50);
             $table->decimal('fee_buy_persen', 5, 2)->default(0);
             $table->decimal('fee_sell_persen', 5, 2)->default(0);
