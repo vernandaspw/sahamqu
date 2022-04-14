@@ -23,7 +23,7 @@ class LoginPageController extends Controller
     {
         $request->validate([
             'nama' => 'max:30|required',
-            'email' => 'email|required|max:100',
+            'email' => 'email|required|max:100|unique:users,email',
             'password' => 'required|min:5|max:30',
         ]);
 
