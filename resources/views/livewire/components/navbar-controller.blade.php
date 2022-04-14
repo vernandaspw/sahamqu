@@ -31,22 +31,22 @@
         <li class="nav-item">
             <a class="nav-link  fw-light text-white  @if (request()->is('beranda'))
                 fw-bolder
-            @endif" href="#" style="font-size: 15px">Beranda</a>
+            @endif" href="{{ url('beranda') }}" style="font-size: 15px">Beranda</a>
         </li>
         <li class="nav-item">
             <a class="nav-link fw-light text-white @if (request()->is('broker'))
                 fw-bolder
-            @endif" href="#" style="font-size: 15px">Broker</a>
+            @endif" href="{{ url('broker') }}" style="font-size: 15px">Broker</a>
         </li>
         <li class="nav-item">
             <a class="nav-link fw-light text-white @if (request()->is('perusahaan'))
                     fw-bolder
-            @endif" href="#" style="font-size: 15px">Perusahaan</a>
+            @endif" href="{{ url('perusahaan') }}" style="font-size: 15px">Perusahaan</a>
         </li>
         <li class="nav-item">
             <a class="nav-link fw-light text-white @if (request()->is('akun'))
                     fw-bolder
-            @endif" href="#" style="font-size: 15px">Akun</a>
+            @endif" href="{{ url('akun') }}" style="font-size: 15px">Akun</a>
         </li>
 
     </ul>
