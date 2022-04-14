@@ -58,9 +58,10 @@
                                     wire:model='nama'>
                             </div>
                             <button type="submit" class="btn btn-primary form-control mt-2">Simpan</button>
-                            <button wire:click="$toggle('tambahpage')"
-                                class="btn btn-transparent form-control mt-1">kembali</button>
+
                         </form>
+                        <button wire:click="$toggle('tambahpage')"
+                            class="btn btn-transparent form-control mt-1">kembali</button>
                     </div>
                 </div>
             </div>

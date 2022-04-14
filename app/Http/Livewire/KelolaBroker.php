@@ -13,9 +13,10 @@ class KelolaBroker extends Component
 
     public $byid;
 
-    public function tambahpage()
+    public function resetinput()
     {
-        $this->tambahpage = 'daw';
+        $this->byid = null;
+        $this->nama = null;
     }
 
     public function tambah()
@@ -31,8 +32,10 @@ class KelolaBroker extends Component
         if ($tambah) {
             $this->tambahpage = false;
             session()->flash('msg_success', 'berhasil menambahkan broker');
+            $this->resetinput();
         } else {
             session()->flash('msg_error', 'gagal menambahkan broker');
+            $this->resetinput();
         }
     }
 
@@ -58,8 +61,10 @@ class KelolaBroker extends Component
         if ($tambah) {
             $this->editpage = false;
             session()->flash('msg_success', 'berhasil ubah broker');
+            $this->resetinput();
         } else {
             session()->flash('msg_error', 'gagal ubah broker');
+            $this->resetinput();
         }
     }
 
