@@ -9,6 +9,9 @@ class KelolaBroker extends Component
 {
     public $nama;
     public $tambahpage = false;
+    public $editpage = false;
+
+    public $byid;
 
     public function tambahpage()
     {
@@ -27,9 +30,47 @@ class KelolaBroker extends Component
 
         if ($tambah) {
             $this->tambahpage = false;
-            session()->flush('msg_success', 'berhasil menambahkan broker');
+            session()->flash('msg_success', 'berhasil menambahkan broker');
         } else {
-            session()->flush('msg_error', 'gagal menambahkan broker');
+            session()->flash('msg_error', 'gagal menambahkan broker');
+        }
+    }
+
+    public function edit($id)
+    {
+        $this->editpage = true;
+        $this->byid = $id;
+
+        $data = Broker::find($this->byid);
+        $this->nama = $data->nama;
+    }
+
+    public function update()
+    {
+        $this->validate([
+            'nama' => 'required|max:50'
+        ]);
+
+        $tambah = Broker::find($this->byid)->update([
+            'nama' => $this->nama
+        ]);
+
+        if ($tambah) {
+            $this->editpage = false;
+            session()->flash('msg_success', 'berhasil ubah broker');
+        } else {
+            session()->flash('msg_error', 'gagal ubah broker');
+        }
+    }
+
+    public function hapus($id)
+    {
+        $data = Broker::findOrFail($id)->delete();
+
+        if ($data) {
+            session()->flash('msg_success', 'berhasil menghapus broker');
+        } else {
+            session()->flash('msg_error', 'gagal menghapus broker');
         }
     }
 
