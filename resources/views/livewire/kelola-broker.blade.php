@@ -85,9 +85,15 @@
                 </div>
             </div>
         </div>
+
         @empty
         <center>Tidak ada data</center>
         @endforelse
+        @if (count($datas) >= $paginate )
+        <div class="container-fluid">
+            <button class="form-control btn btn-secondary mb-5" wire:click='next'>next</button>
+        </div>
+        @endif
         @endif
         @endif
 

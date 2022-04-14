@@ -10,8 +10,14 @@ class KelolaBroker extends Component
     public $nama;
     public $tambahpage = false;
     public $editpage = false;
+    public $paginate = 10;
 
     public $byid;
+
+    public function next()
+    {
+        $this->paginate = $this->paginate + 10;
+    }
 
     public function resetinput()
     {
@@ -81,9 +87,9 @@ class KelolaBroker extends Component
 
     public function render()
     {
-        $datas = Broker::latest()->get();
+        $datas = Broker::latest();
         return view('livewire.kelola-broker', [
-            'datas' => $datas
+            'datas' => $datas->paginate($this->paginate)
         ]);
     }
 }
