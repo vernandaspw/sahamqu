@@ -30,4 +30,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('broker', [BrokerPageController::class, 'index']);
     Route::get('perusahaan', [PerusahaanPageController::class, 'index']);
     Route::get('akun', [BerandaPageController::class, 'index']);
+
+    Route::get('logout', [LoginPageController::class, 'logout']);
 });
