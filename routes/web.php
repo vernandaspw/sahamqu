@@ -19,8 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', [LoginPageController::class, 'index'])->name('/');
-Route::post('/login', [LoginPageController::class, 'login']);
+Route::middleware(['noauth'])->group(function () {
+    Route::get('/', [LoginPageController::class, 'index'])->name('/');
+    Route::post('/login', [LoginPageController::class, 'login']);
+});
 
 
 Route::middleware(['auth'])->group(function () {
