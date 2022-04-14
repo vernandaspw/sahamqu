@@ -80,6 +80,7 @@
                     </div>
                     <div class="col-2">
                         <button wire:click='hapus({{ $data->id }})'
+                            onclick="confirm('Anda yakin ingin menghapus {{$data->nama}}?') || event.stopImmediatePropagation()"
                             class="btn btn-sm btn-transparent text-danger">hapus</button>
                     </div>
                 </div>

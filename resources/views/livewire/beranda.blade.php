@@ -9,13 +9,13 @@
             </ul> --}}
         </div>
     </nav>
-    <div class="mt-3">
-        <div class="row">
-            <div class="container">
-                <div class="card m-2 shadow-sm">
-                    <div class="card-body">
 
-                    </div>
+    <div style="margin-top: 78px">
+
+        <div class="container-fluid">
+            <div class="card m-2 shadow-sm">
+                <div class="card-body">
+                    Filtur Perusahaan, input saham, avg saham sdg proses pengerjaan
                 </div>
             </div>
         </div>
