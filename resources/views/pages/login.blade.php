@@ -8,10 +8,14 @@
             <div class="col-lg-3">
                 <div class="card">
                     <div class="card-body">
-                        @if (session()->has('msg_error'))
-                        <div class="text-danger">{{ session()->get('msg_error') }}</div>
-                        @endif
+
                         <h3>Login</h3>
+                        @if (session()->has('msg_error'))
+                        <div class="alert alert-danger">
+                            {{ session('msg_error') }}
+                        </div>
+                        @endif
+                        <br>
                         <form action="{{ url('login') }}" method="post">
                             @csrf
                             @method('POST')

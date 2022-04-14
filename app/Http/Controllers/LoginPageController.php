@@ -19,7 +19,6 @@ class LoginPageController extends Controller
             'password' => 'required'
         ]);
 
-
         $credentials = $req->only('email', 'password');
         $auth = Auth::attempt([
             'email' => $req->email,
@@ -28,8 +27,9 @@ class LoginPageController extends Controller
         ], true);
         if ($auth) {
             return redirect('beranda');
+        } else {
+            return redirect()->back()->with('msg_error', 'Username atau password salah');
         }
-        return redirect()->back();
     }
 
     public function logout()
