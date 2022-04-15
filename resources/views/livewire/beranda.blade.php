@@ -16,6 +16,8 @@
                 <div class="card-body">
                     Hi, {{ auth()->user()->nama }}
                     <hr>
+                    App ini dibuat Untuk mengetauhi kapan waktunya jual saham yang dimiliki secara avg
+                    <hr>
                     <div>Maintance filtur transaksi</div>
                 </div>
             </div>
