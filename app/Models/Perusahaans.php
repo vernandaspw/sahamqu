@@ -15,4 +15,9 @@ class Perusahaans extends Model
     {
         return $this->belongsTo(Broker::class, 'broker_id');
     }
+
+    public function transaksi()
+    {
+        return $this->hasMany(Transaksi::class, 'perusahaan_id', 'id');
+    }
 }

@@ -10,4 +10,9 @@ class Broker extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function perusahaan()
+    {
+        return $this->hasMany(Perusahaans::class, 'broker_id', 'id');
+    }
 }
