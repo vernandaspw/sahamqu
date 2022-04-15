@@ -14,7 +14,7 @@
         <div class="container-fluid">
             <div class="card m-2 shadow-sm">
                 <div class="card-body">
-                    Saham saya
+                    Hi, {{ auth()->user()->nama }}
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                         <div class="col-8">
                             <a class="btn" wire:click='detailbroker({{ $data->id }})'>
                                 <div class="">
-                                    <div class="fs-3" >
+                                    <div class="fs-3">
                                         {{ $data->nama }}
                                     </div>
                                     <div class="fs-6">
