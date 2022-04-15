@@ -13,6 +13,11 @@
 <div class="container-fluid" style="margin-top: 75px">
     <h3>Hi, {{ auth()->user()->nama }}</h3>
     <br>
+    <br>
+    <hr>
+    Lupa password? hubungi chat via wa 089660741134
+    <hr>
+    <br>
     <a class="form-control btn btn-danger" href="{{ url('logout') }}">Logout</a>
 </div>
 @endsection
