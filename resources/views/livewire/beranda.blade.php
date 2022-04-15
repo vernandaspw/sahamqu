@@ -32,7 +32,7 @@
 
                         <div class="col-8">
                             <a class="btn" wire:click='detailbroker({{ $data->id }})'>
-                                <div class="">
+                                <div class="text-start">
                                     <div class="fs-3">
                                         {{ $data->nama }}
                                     </div>
