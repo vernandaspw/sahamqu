@@ -63,6 +63,16 @@
         <div class="container-fluid">
             <h5>Saham dimiliki</h5>
         </div>
+        @if (session()->has('msg_success'))
+        <div class="alert alert-success">
+            {{ session('msg_success') }}
+        </div>
+        @endif
+        @if (session()->has('msg_error'))
+        <div class="alert alert-danger">
+            {{ session('msg_error') }}
+        </div>
+        @endif
         <div class="container-fluid">
             @forelse ($perusahaan as $data)
 
@@ -81,13 +91,13 @@
                                     </div>
                                     <div class="fs-6">
                                         <div>Transaksi: {{$data->transaksi->count() }}</div>
-                                        <div>lot : {{ $data->transaksi->sum('lot') }}</div>
+                                        <div>Total lot : {{ $data->transaksi->sum('lot') }}</div>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-2 d-flex align-items-center">
-                            <button wire:click='hapus({{ $data->id }})'
+                            <button wire:click='hapussaham({{ $data->id }})'
                                 onclick="confirm('Anda yakin ingin menghapus {{$data->nama}}?') || event.stopImmediatePropagation()"
                                 class="btn btn-sm btn-transparent text-danger">hapus</button>
                         </div>

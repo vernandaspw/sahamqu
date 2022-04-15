@@ -9,6 +9,15 @@ use Livewire\Component;
 
 class Beranda extends Component
 {
+    public function hapussaham($id)
+    {
+        $cek = Perusahaans::findOrFail($id)->delete();
+        if ($cek) {
+            session()->flash('msg_success', 'berhasil hapus saham');
+        } else {
+            session()->flash('msg_error', 'gagal hapus saham');
+        }
+    }
     public function render()
     {
         $broker = Broker::with('perusahaan')->where('user_id', auth()->user()->id)->get();
