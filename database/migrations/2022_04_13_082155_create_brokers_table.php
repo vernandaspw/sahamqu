@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users', 'id')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nama', 50);
-            $table->decimal('fee_buy_persen', 5, 2)->default(0);
-            $table->decimal('fee_sell_persen', 5, 2)->default(0);
+            $table->decimal('fee_buy_persen', 5, 2)->default(0.15);
+            $table->decimal('fee_sell_persen', 5, 2)->default(0.25);
             $table->integer('lembar', false)->default(100);
             $table->timestamps();
         });
