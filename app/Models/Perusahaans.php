@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Perusahaans extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
+
+    public function broker()
+    {
+        return $this->belongsTo(Broker::class, 'broker_id');
+    }
 }

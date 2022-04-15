@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <div class="card m-2 shadow-sm">
                 <div class="card-body">
-                    Filtur Perusahaan, input saham, avg saham sdg proses pengerjaan
+                    Filtur input saham, avg saham sdg proses pengerjaan
                 </div>
             </div>
         </div>

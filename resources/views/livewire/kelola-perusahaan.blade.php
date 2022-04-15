@@ -32,9 +32,18 @@
                     <div class="card-body">
                         <form wire:submit.prevent='update'>
                             <div class="">
-                                <label for="nama">Nama broker</label>
-                                <input placeholder="Isi nama broker" class="form-control" type="text" id="nama"
-                                    wire:model='nama'>
+                                <label for="broker_id">Pilih broker</label>
+                                <select id="broker_id" wire:model='broker_id' class="form-control">
+                                    <option value="">-Pilih-</option>
+                                    @foreach ($brokersdata as $broker)
+                                    <option value="{{ $broker->id }}">{{ $broker->nama }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="">
+                                <label for="kode_perusahaan">Kode saham perusahaan</label>
+                                <input placeholder="Isi kode saham perusahaan (BBRI)" class="form-control" type="text"
+                                    id="kode_perusahaan" wire:model='kode_perusahaan' style="text-transform: uppercase">
                             </div>
                             <button type="submit" class="btn btn-primary form-control mt-2">Ubah</button>
 
@@ -53,9 +62,18 @@
                     <div class="card-body">
                         <form wire:submit.prevent='tambah'>
                             <div class="">
-                                <label for="nama">Nama broker</label>
-                                <input placeholder="Isi nama broker" class="form-control" type="text" id="nama"
-                                    wire:model='nama'>
+                                <label for="broker_id">Pilih broker</label>
+                                <select id="broker_id" wire:model='broker_id' class="form-control">
+                                    <option value="">-Pilih-</option>
+                                    @foreach ($brokersdata as $broker)
+                                    <option value="{{ $broker->id }}">{{ $broker->nama }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="">
+                                <label for="kode_perusahaan">Kode saham perusahaan</label>
+                                <input placeholder="Isi kode saham perusahaan (BBRI)" class="form-control" type="text"
+                                    id="kode_perusahaan" wire:model='kode_perusahaan' style="text-transform: uppercase">
                             </div>
                             <button type="submit" class="btn btn-primary form-control mt-2">Simpan</button>
 
@@ -72,11 +90,11 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-8">
-                        <div class="fs-3">
-                            nama
+                        <div class="fs-3" style="text-transform: uppercase">
+                            {{ $data->kode_perusahaan }}
                         </div>
                         <div class="fs-6">
-                            (broker)
+                            broker: {{ $data->broker->nama }}
                         </div>
                     </div>
                     <div class="col-2">
@@ -85,6 +103,7 @@
                     </div>
                     <div class="col-2">
                         <button wire:click='hapus({{ $data->id }})'
+                            onclick="confirm('Anda yakin ingin menghapus {{$data->nama}}?') || event.stopImmediatePropagation()"
                             class="btn btn-sm btn-transparent text-danger">hapus</button>
                     </div>
                 </div>
