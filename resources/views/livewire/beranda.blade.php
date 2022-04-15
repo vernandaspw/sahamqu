@@ -18,6 +18,9 @@
                     <hr>
                     App ini dibuat Untuk mengetauhi kapan waktunya jual saham yang dimiliki secara avg
                     <hr>
+                    Cara transaksi : Pilih saham yg dimiliki, lalu tambah transaksi setiap kamu melakukan pembelian
+                    saham
+                    <hr>
                     <div>Maintance filtur transaksi</div>
                 </div>
             </div>
