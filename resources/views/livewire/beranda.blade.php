@@ -15,6 +15,8 @@
             <div class="card m-2 shadow-sm">
                 <div class="card-body">
                     Hi, {{ auth()->user()->nama }}
+                    <hr>
+                    <div>Maintance filtur transaksi</div>
                 </div>
             </div>
         </div>
@@ -31,21 +33,21 @@
                     <div class="row">
 
                         <div class="col-8">
-                            <a class="btn" wire:click='detailbroker({{ $data->id }})'>
-                                <div class="text-start">
-                                    <div class="fs-3">
-                                        {{ $data->nama }}
-                                    </div>
-                                    <div class="fs-6">
-                                        Perusahaan: {{ $data->perusahaan->count() }}
-                                    </div>
+
+                            <div class="text-start">
+                                <div class="fs-3">
+                                    {{ $data->nama }}
                                 </div>
-                            </a>
+                                <div class="fs-6">
+                                    Perusahaan: {{ $data->perusahaan->count() }}
+                                </div>
+                            </div>
+
                         </div>
                         <div class="col-2 d-flex align-items-center">
-                            <button wire:click='hapus({{ $data->id }})'
+                            {{-- <button wire:click='hapus({{ $data->id }})'
                                 onclick="confirm('Anda yakin ingin menghapus {{$data->nama}}?') || event.stopImmediatePropagation()"
-                                class="btn btn-sm btn-transparent text-danger">hapus</button>
+                                class="btn btn-sm btn-transparent text-danger">hapus</button> --}}
                         </div>
                     </div>
                 </div>
