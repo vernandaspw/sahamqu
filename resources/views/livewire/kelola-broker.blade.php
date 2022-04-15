@@ -57,6 +57,21 @@
                                 <input placeholder="Isi nama broker" class="form-control" type="text" id="nama"
                                     wire:model='nama'>
                             </div>
+                            <div class="">
+                                <label for="fee_buy_persen">Fee Beli &</label>
+                                <input placeholder="cth: 0.15" class="form-control" type="text" id="fee_buy_persen"
+                                    wire:model='fee_buy_persen'>
+                            </div>
+                            <div class="">
+                                <label for="fee_sell_persen">Fee Jual %</label>
+                                <input placeholder="cth: 0.25" class="form-control" type="text" id="fee_sell_persen"
+                                    wire:model='fee_sell_persen'>
+                            </div>
+                            <div class="">
+                                <label for="lembar">Jumlah Lembar dalam 1 lot</label>
+                                <input placeholder="cth: 100" class="form-control" type="text" id="lembar"
+                                    wire:model='lembar'>
+                            </div>
                             <button type="submit" class="btn btn-primary form-control mt-2">Simpan</button>
 
                         </form>
