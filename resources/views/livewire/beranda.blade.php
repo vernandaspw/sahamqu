@@ -1,7 +1,7 @@
 <div>
     <nav class="navbar shadow navbar-expand navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ url('broker') }}">Beranda</a>
+            <a class="navbar-brand" href="{{ url('beranda') }}">Sahamqu</a>
             {{-- <ul class="navbar-nav ms-auto  mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#" wire:click='tambah'>Tambah</a>
