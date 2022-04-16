@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Perusahaans;
 use App\Models\Transaksi as ModelsTransaksi;
+use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
 class Transaksi extends Component
@@ -53,8 +54,10 @@ class Transaksi extends Component
     public function render()
     {
         $data = Perusahaans::with('transaksi', 'broker')->where('user_id', auth()->user()->id)->findOrFail($this->byid);
+        $transaksi = ModelsTransaksi::where('perusahaan_id', $data->id)->first();
         return view('livewire.transaksi', [
-            'data' => $data
+            'data' => $data,
+            'trx' => $transaksi
         ])->extends('app')->section('content');
     }
 }

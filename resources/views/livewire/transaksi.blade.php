@@ -81,15 +81,58 @@
             </div>
             <br>
             <div class="card shadow-sm">
+                @if ($trx)
                 <div class="card-body">
                     <div class="">Total lot dimiliki : {{ $data->transaksi->sum('lot') }}</div>
                     <hr>
                     <div>
-                        <h6>Avg *belum termasuk fee</h6>
+                        <h6>Avg <span class="text-warning">*blm termasuk fee</span></h6>
                     </div>
-                    <div>Total nilai *blm fee : {{ $data->transaksi->sum('subtotal_nilai') }}</div>
-                    <div>Harga *blm fee : {{ $data->transaksi->avg('harga') }}</div>
+                    <div>Total nilai : @uang($data->transaksi->sum('subtotal_nilai'))
+                    </div>
+                    <div>Harga : @harga($data->transaksi->avg('harga'))</div>
+                    <hr>
+
+
+                    <div class="">
+                        <h6>Avg beli saja <span class="text-warning">*sdh termasuk fee beli</span></h6>
+                    </div>
+                    <div class="">Total nilai : @uang($data->transaksi->sum('fee_buy_nilai') +
+                        $data->transaksi->sum('subtotal_nilai'))</div>
+                    <div>Harga : @harga(($data->transaksi->sum('fee_buy_nilai') +
+                        $data->transaksi->sum('subtotal_nilai')) / ($data->transaksi->sum('lot') *
+                        $data->broker->lembar))</div>
+                    <hr>
+
+                    <div class="">
+                        <h6>Avg sell saja <span class="text-warning">*sdh termasuk fee beli</span></h6>
+                    </div>
+                    <div class="">Total nilai : @uang($data->transaksi->sum('fee_buy_nilai') +
+                        $data->transaksi->sum('subtotal_nilai'))</div>
+                    <div>Harga : @harga(($data->transaksi->sum('fee_buy_nilai') +
+                        $data->transaksi->sum('subtotal_nilai')) / ($data->transaksi->sum('lot') *
+                        $data->broker->lembar))</div>
+                    <hr>
+
+                    <div class="">
+                        <h6>avg minimal untuk dijual <span class="text-warning">*sdh termasuk fee beli dan jual</span>
+                        </h6>
+                    </div>
+                    <div class="">Fee buysell : @uang(($data->transaksi->sum('subtotal_nilai') *
+                        $data->broker->fee_sell_persen / 100) + $data->transaksi->sum('fee_buy_nilai'))</div>
+                    <div class="">Total nilai : @uang($data->transaksi->sum('subtotal_nilai') +
+                        (($data->transaksi->sum('subtotal_nilai') *
+                        $data->broker->fee_sell_persen / 100) + $data->transaksi->sum('fee_buy_nilai')))</div>
+                    <div>Harga : @harga(($data->transaksi->sum('subtotal_nilai') +
+                        (($data->transaksi->sum('subtotal_nilai') *
+                        $data->broker->fee_sell_persen / 100) + $data->transaksi->sum('fee_buy_nilai'))) /
+                        ($data->transaksi->sum('lot') *
+                        $data->broker->lembar))</div>
                 </div>
+                @else
+
+                @endif
+
             </div>
         </div>
         </ div>

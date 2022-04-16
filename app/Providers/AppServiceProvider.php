@@ -28,8 +28,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('uang', function ($expression) {
             return "Rp. {{ number_format($expression,0,',','.'); }}";
         });
-        Blade::directive('uangold', function ($expression) {
-            return "Rp.  number_format($expression,0,',','.');";
+        Blade::directive('harga', function ($expression) {
+            return "{{  number_format($expression,0,',','.'); }}";
         });
 
         Paginator::useBootstrap();
