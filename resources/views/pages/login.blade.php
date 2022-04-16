@@ -42,10 +42,10 @@
                                 @enderror
                             </div>
 
-                            <button type="submit" class="btn btn-primary form-control">Login</button>
+                            <button type="submit" class="btn btn-primary form-control mb-3">Login</button>
                         </form>
-
-                        <a class="btn btn-transparent form-control mt-2" href="{{ url('daftar') }}">Buat akun</a>
+                        Tidak memiliki akun?
+                        <a class="btn btn-transparent form-control mt-1" href="{{ url('daftar') }}">Buat akun</a>
                     </div>
                 </div>
             </div>
