@@ -70,7 +70,9 @@
                             <td>{{ $transaksi->lot }}</td>
                             <td>@uang($transaksi->harga)</td>
                             <td>@uang($transaksi->total_nilai_beli)</td>
-                            <td>{{ $transaksi->created_at }}</td>
+                            <td>{{ $transaksi->created_at }} <button class="btn btn-transparent text-danger"
+                                    onclick="confirm('Anda yakin ingin menghapus {{$data->nama}}?') || event.stopImmediatePropagation()"
+                                    wire:click='hapus({{ $transaksi->id }})'>Hapus</button></td>
                         </tr>
                         @empty
                         tidak ada data
@@ -97,6 +99,7 @@
                     <div class="">
                         <h6>Avg beli saja <span class="text-warning">*sdh termasuk fee beli</span></h6>
                     </div>
+                    <div class="">Fee Buy : @uang($data->transaksi->sum('fee_buy_nilai'))</div>
                     <div class="">Total nilai : @uang($data->transaksi->sum('fee_buy_nilai') +
                         $data->transaksi->sum('subtotal_nilai'))</div>
                     <div>Harga : @harga(($data->transaksi->sum('fee_buy_nilai') +
@@ -107,10 +110,21 @@
                     <div class="">
                         <h6>Avg sell saja <span class="text-warning">*sdh termasuk fee beli</span></h6>
                     </div>
-                    <div class="">Total nilai : @uang($data->transaksi->sum('fee_buy_nilai') +
-                        $data->transaksi->sum('subtotal_nilai'))</div>
-                    <div>Harga : @harga(($data->transaksi->sum('fee_buy_nilai') +
-                        $data->transaksi->sum('subtotal_nilai')) / ($data->transaksi->sum('lot') *
+                    <div class="">Fee Sell : @uang(
+                        $data->transaksi->sum('subtotal_nilai') *
+                        ($data->broker->fee_sell_persen / 100))</div>
+                    <div class="">Total nilai : @uang(
+                        $data->transaksi->sum('subtotal_nilai') + (
+                        $data->transaksi->sum('subtotal_nilai') *
+                        ($data->broker->fee_sell_persen / 100)
+                        )
+                        )</div>
+                    <div>Harga : @harga((
+                        $data->transaksi->sum('subtotal_nilai') + (
+                        $data->transaksi->sum('subtotal_nilai') *
+                        ($data->broker->fee_sell_persen / 100)
+                        ))
+                        / ($data->transaksi->sum('lot') *
                         $data->broker->lembar))</div>
                     <hr>
 
@@ -137,3 +151,4 @@
         </div>
         </ div>
     </div>
+

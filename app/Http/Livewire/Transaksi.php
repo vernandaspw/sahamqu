@@ -46,6 +46,16 @@ class Transaksi extends Component
         }
     }
 
+    public function hapus($trxid)
+    {
+        $cek = ModelsTransaksi::findOrFail($trxid)->delete();
+        if ($cek) {
+            session()->flash('msg_success', 'Berhasil hapus transaksi');
+        } else {
+            session()->flash('msg_error', 'Gagal hapus transaksi');
+        }
+    }
+
     public function mount($id)
     {
         $this->byid = $id;
