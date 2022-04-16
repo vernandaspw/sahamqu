@@ -84,7 +84,7 @@
                     <div class="row">
 
                         <div class="col-8">
-                            <a class="btn" wire:click='detailbroker({{ $data->id }})'>
+                            <a class="btn" href="{{ url('transaksi', $data->id) }}">
                                 <div class="text-start">
                                     <div class="fs-6">
                                         {{ $data->broker->nama }}
@@ -94,7 +94,7 @@
                                     </div>
                                     <div class="fs-6">
                                         <div>Transaksi: {{$data->transaksi->count() }}</div>
-                                        <div>Total lot : {{ $data->transaksi->sum('lot') }}</div>
+                                        <div>Total lot : {{ $data->transaksi->sum(' lot') }}</div>
                                     </div>
                                 </div>
                             </a>

@@ -18,11 +18,11 @@ class Beranda extends Component
             session()->flash('msg_error', 'gagal hapus saham');
         }
     }
+
     public function render()
     {
         $broker = Broker::with('perusahaan')->where('user_id', auth()->user()->id)->get();
         $perusahaan = Perusahaans::with('transaksi', 'broker')->where('user_id', auth()->user()->id)->get();
-
         return view('livewire.beranda', [
             'broker' => $broker,
             'perusahaan' => $perusahaan

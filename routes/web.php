@@ -5,6 +5,8 @@ use App\Http\Controllers\BerandaPageController;
 use App\Http\Controllers\BrokerPageController;
 use App\Http\Controllers\LoginPageController;
 use App\Http\Controllers\PerusahaanPageController;
+use App\Http\Controllers\TransaksiController;
+use App\Http\Livewire\Transaksi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('broker', [BrokerPageController::class, 'index']);
     Route::get('perusahaan', [PerusahaanPageController::class, 'index']);
     Route::get('akun', [AkunPageController::class, 'index']);
+    Route::get('transaksi/{id}', Transaksi::class);
 
     Route::get('logout', [LoginPageController::class, 'logout']);
 });
