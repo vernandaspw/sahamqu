@@ -83,8 +83,14 @@
             <div class="card shadow-sm">
                 <div class="card-body">
                     <div class="">Total lot dimiliki : {{ $data->transaksi->sum('lot') }}</div>
+                    <hr>
+                    <div>
+                        <h6>Avg *belum termasuk fee</h6>
+                    </div>
+                    <div>Total nilai *blm fee : {{ $data->transaksi->sum('subtotal_nilai') }}</div>
+                    <div>Harga *blm fee : {{ $data->transaksi->avg('harga') }}</div>
                 </div>
             </div>
         </div>
+        </ div>
     </div>
-</div>

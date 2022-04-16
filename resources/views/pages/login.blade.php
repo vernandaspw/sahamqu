@@ -10,6 +10,9 @@
                     <div class="card-body">
 
                         <h3>Login</h3>
+                        <hr>
+                        App ini dibuat Untuk mengetauhi kapan waktunya jual saham yang dimiliki secara avg
+                        <hr>
                         @if (session()->has('msg_error'))
                         <div class="alert alert-danger">
                             {{ session('msg_error') }}

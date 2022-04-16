@@ -15,13 +15,13 @@
             <div class="card m-2 shadow-sm">
                 <div class="card-body">
                     Hi, {{ auth()->user()->nama }}
-                    <hr>
-                    App ini dibuat Untuk mengetauhi kapan waktunya jual saham yang dimiliki secara avg
+
                     <hr>
                     Cara transaksi : Pilih saham yg dimiliki, lalu tambah transaksi setiap kamu melakukan pembelian
                     saham
+                    <div>Jika telah menjual maka tinggal hapus saja</div>
                     <hr>
-                    <div>Maintance filtur transaksi</div>
+
                 </div>
             </div>
         </div>
