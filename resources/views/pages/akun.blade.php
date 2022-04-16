@@ -16,6 +16,8 @@
     <br>
     <hr>
     Lupa password? hubungi chat via wa 089660741134
+    <br>
+    jika ada saran atau bug hubungi chat via wa 089660741134
     <hr>
     <br>
     <a class="form-control btn btn-danger" href="{{ url('logout') }}">Logout</a>
