@@ -8,8 +8,8 @@
     <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/x-icon">
     {{-- PWA --}}
     <meta name="theme-color" content="#6777ef" />
-    <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
-    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
     {{-- end pwa --}}
 
 
