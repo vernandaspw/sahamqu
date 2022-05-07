@@ -44,6 +44,11 @@ return [
                 'path' => '/images/icons/icon-512x512.png',
                 'purpose' => 'any'
             ],
+            [
+                'path' => 'logo.png',
+                'sizes' => '512x512',
+                'purpose' => 'any'
+            ],
         ],
         'splash' => [
             '640x1136' => '/images/icons/splash-640x1136.png',
@@ -63,8 +68,11 @@ return [
                 'description' => 'Shortcut Link 1 Description',
                 'url' => '/shortcutlink1',
                 'icons' => [
-                    "src" => "/images/icons/icon-72x72.png",
-                    "purpose" => "any maskable"
+                    "src" => "logo.png",
+                    'path' => 'logo.png',
+                    'sizes' => '512x512',
+                    'purpose' => 'any'
+
                 ]
             ],
             [
