@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/x-icon">
     {{-- PWA --}}
     <!-- Web Application Manifest -->
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="{{asset('manifest.json')}}">
     <!-- Chrome for Android theme color -->
     <meta name="theme-color" content="#000000">
 
