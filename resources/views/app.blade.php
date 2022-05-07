@@ -7,6 +7,7 @@
 
     <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/x-icon">
     {{-- PWA --}}
+    @laravelPWA
     <!-- Web Application Manifest -->
     <link rel="manifest" href="{{asset('manifest.json')}}">
     <!-- Chrome for Android theme color -->
@@ -66,7 +67,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
-    @laravelPWA
+
     <style>
         body {
             font-family: 'Nunito', sans-serif;

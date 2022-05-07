@@ -5,9 +5,9 @@ return [
     'manifest' => [
         'name' => env('APP_NAME', 'My PWA App'),
         'short_name' => 'PWA',
-        'start_url' => '/sahamqu/',
+        'start_url' => '/',
         'background_color' => '#ffffff',
-        'theme_color' => '#000000',
+        'theme_color' => '#00DDFF',
         'display' => 'standalone',
         'orientation' => 'any',
         'status_bar' => 'black',
