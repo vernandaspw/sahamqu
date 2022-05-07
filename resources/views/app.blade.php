@@ -7,9 +7,10 @@
 
     <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/x-icon">
     {{-- PWA --}}
-    @laravelPWA
+
     <!-- Web Application Manifest -->
-    <link rel="manifest" href="{{asset('manifest.json')}}">
+    {{--
+    <link rel="manifest" href="{{asset('manifest.json')}}"> --}}
     <!-- Chrome for Android theme color -->
     <meta name="theme-color" content="#000000">
 
@@ -79,6 +80,7 @@
     @stack('style')
     @livewireStyles
 
+
     <script type="text/javascript">
         // Initialize the service worker
         if ('serviceWorker' in navigator) {
@@ -93,6 +95,7 @@
             });
         }
     </script>
+    @laravelPWA
 </head>
 
 <body class="antialiased">
