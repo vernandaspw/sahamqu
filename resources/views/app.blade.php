@@ -4,13 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Web Application Manifest -->
-    <link rel="manifest" href="/manifest.json">
-    <!-- Chrome for Android theme color -->
-    <meta name="theme-color" content="#000000">
+    <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/x-icon">
+    {{-- PWA --}}
+    <meta name="theme-color" content="#6777ef" />
+    <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+    {{-- end pwa --}}
 
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="PWA">
+
 
     <title>Sahamqu</title>
 
@@ -27,7 +28,7 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     @stack('style')
     @livewireStyles
-    @laravelPWA
+
 </head>
 
 <body class="antialiased">
@@ -45,17 +46,11 @@
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
     </script>
 
-    <script type="text/javascript">
-        // Initialize the service worker
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/serviceworker.js', {
-            scope: '.'
-        }).then(function (registration) {
-            // Registration was successful
-            console.log('Laravel PWA: ServiceWorker registration successful with scope: ', registration.scope);
-        }, function (err) {
-            // registration failed :(
-            console.log('Laravel PWA: ServiceWorker registration failed: ', err);
+    <script src="{{ asset('/sw.js') }}"></script>
+    <script>
+        if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("/sw.js").then(function (reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
         });
     }
     </script>

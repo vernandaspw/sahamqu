@@ -64,7 +64,7 @@ return [
                 'url' => '/shortcutlink1',
                 'icons' => [
                     "src" => "/images/icons/icon-72x72.png",
-                    "purpose" => "any"
+                    "purpose" => "any maskable"
                 ]
             ],
             [

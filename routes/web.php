@@ -20,7 +20,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('offline', function () {
+    return view('offline');
+});
 
 Route::middleware(['noauth'])->group(function () {
     Route::get('/', [LoginPageController::class, 'index'])->name('/');
