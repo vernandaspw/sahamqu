@@ -10,7 +10,7 @@
     {{-- PWA --}}
     <!-- PWA  -->
     <meta name="theme-color" content="#00A2FF" />
-    <link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
 
 
@@ -55,7 +55,7 @@
     <script src="{{ asset('/sw.js') }}"></script>
     <script>
         if (!navigator.serviceWorker.controller) {
-        navigator.serviceWorker.register({{ asset('/sw.js') }}"/sw.js").then(function (reg) {
+        navigator.serviceWorker.register({{ asset('/sw.js') }}).then(function (reg) {
             console.log("Service worker has been registered for scope: " + reg.scope);
         });
     }
