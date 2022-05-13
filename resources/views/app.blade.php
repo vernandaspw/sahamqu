@@ -7,14 +7,6 @@
 
     <link rel="shortcut icon" href="{{ asset('logo.png') }}" type="image/x-icon">
 
-    {{-- PWA --}}
-    <!-- PWA  -->
-    <meta name="theme-color" content="#00A2FF" />
-    <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
-    <link rel="manifest" href="{{ asset('/manifest.json') }}">
-
-
-
     <title>Sahamqu</title>
 
     <!-- Fonts -->
@@ -50,15 +42,6 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
         integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous">
-    </script>
-
-    <script src="{{ asset('/sw.js') }}"></script>
-    <script>
-        if (!navigator.serviceWorker.controller) {
-        navigator.serviceWorker.register({{ asset('/sw.js') }}).then(function (reg) {
-            console.log("Service worker has been registered for scope: " + reg.scope);
-        });
-    }
     </script>
 
 
