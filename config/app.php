@@ -167,7 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
-        Ladumor\LaravelPwa\PWAServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -177,6 +177,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        Ladumor\LaravelPwa\PWAServiceProvider::class,
 
     ],
 
