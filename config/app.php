@@ -137,7 +137,7 @@ return [
     */
 
     'providers' => [
-        Ladumor\LaravelPwa\PWAServiceProvider::class,
+
         /*
          * Laravel Framework Service Providers...
          */
@@ -167,7 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        // Ladumor\LaravelPwa\PWAServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -190,11 +190,10 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
-    'LaravelPwa' => \Ladumor\LaravelPwa\LaravelPwa::class,
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
-
+        // 'LaravelPwa' => \Ladumor\LaravelPwa\LaravelPwa::class,
 
     ])->toArray(),
 
