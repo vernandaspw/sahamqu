@@ -26,7 +26,7 @@
 
 
 
-    @laravelPWA
+
 </head>
 
 <body class="antialiased">
