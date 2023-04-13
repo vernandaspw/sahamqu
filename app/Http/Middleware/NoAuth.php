@@ -21,5 +21,7 @@ class NoAuth
             return redirect('beranda');
         }
         return $next($request);
+
+        
     }
 }
